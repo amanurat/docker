@@ -1,4 +1,4 @@
-FROM java:7
+FROM nanfei/java:7
 MAINTAINER Feng Honglin <hfeng@tutum.co>
 
 RUN apt-get update && \
