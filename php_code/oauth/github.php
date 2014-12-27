@@ -11,7 +11,7 @@ $paramList = array_merge($_POST, $_GET);
 print_r($paramList, true);
 print_r('<br>');
 
-if ($paramList['code'] != STATE) {
+if ($paramList['state'] != STATE) {
     print_r('Code failed to pass verification');
     return;
 }
@@ -22,7 +22,7 @@ print_r('Code was verified. Retrieving access token...<br>');
 $data = http_build_query(array(
     'client_id' => CLIENT_ID,
     'client_secret' => CLIENT_SECRET,
-    'code' => STATE,
+    'code' => $paramList['state'],
     'redirect_uri' => REDIRECT_URI
 ));
 
