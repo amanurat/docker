@@ -1,5 +1,5 @@
 FROM java:7
-MAINTAINER Feng Honglin <hfeng@tutum.co>
+MAINTAINER Nanfei Chen
 
 RUN apt-get update && \
     apt-get install -yq --no-install-recommends wget pwgen ca-certificates && \
