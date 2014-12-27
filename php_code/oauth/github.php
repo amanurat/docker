@@ -36,6 +36,28 @@ $context = stream_context_create(array(
 ));
 
 $result = file_get_contents(AUTH_URI, false, $context);
-print_r($result);
+$result = json_decode($result, true);
+$token = array_key_exists('access_token', $result) ? $result['access_token'] : null;
+
+if (isset($token)) {
+    print_r('got access token<br>');
+    
+    $context = stream_context_create(array(
+        'http' => array(
+            'header' => "Authorization: $token OAUTH-TOKEN\r\nAccept: application/json\r\nContent-type: application/x-www-form-urlencoded\r\nContent-Length:" . strlen($data) . "\r\n",
+            'method' => 'POST',
+            'User-Agent' => 'ucdream'
+        )
+    ));
+    
+    $user = 'chennanfei';
+    $repoResult = file_get_contents("https://api.github.com/users/$user/repos?type=owner", false, $context);
+    
+    print_r("repos for user $user<br>");
+    print_r($repoResult);
+} else {
+    print_r('failed to get access token');
+    print_r($result);
+}
 
 ?>
