@@ -1,4 +1,4 @@
-FROM java:7
+FROM nanfei/java:7
 MAINTAINER Nanfei Chen
 
 RUN apt-get update && \
