@@ -5,6 +5,9 @@ app="ucdream"
 imageRepo="$user/$app:latest"
 container="$user-$app"
 
+# pull code
+sudo git pull
+
 # stop container
 activeContainers=`sudo docker ps`
 if [[ $activeContainers =~ ${container} ]]; then
