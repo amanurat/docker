@@ -25,7 +25,7 @@ $authUrl = AUTH_URI . "?$dataStr";
     <style>
         .box {
             padding: 12px;
-            border: 1px solid;
+            border: 1px solid green;
         }
     </style>
 </html>
