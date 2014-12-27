@@ -7,7 +7,7 @@ const AUTH_URI = 'https://github.com/login/oauth/authorize';
 const REDIRECT_URI = 'http://www.ucdream.com/oauth/github.php';
 const STATE = '123456789';
 
-$data = http_build_query(array(
+$dataStr = http_build_query(array(
     'client_id' => CLIENT_ID,
     'client_secret' => CLIENT_SECRET,
     'state' => STATE,
@@ -15,7 +15,7 @@ $data = http_build_query(array(
     'scope' => SCOPE
 ));
 
-$authUrl = AUTH_URI . "?$data";
+$authUrl = AUTH_URI . "?$dataStr";
 
 ?>
 
