@@ -15,20 +15,24 @@ $header = array(
 );
 
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 
 //header
 curl_setopt($ch, CURLOPT_HTTPHEADER , $header);
-curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_HEADER, 1);
+
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+// request type and params
+$formData = http_build_query(array('type' => 'owner'));
+curl_setopt($ch, CURLOPT_GET, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $formData);
+
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
 // user agent
 curl_setopt($ch, CURLOPT_USERAGENT, 'ucdream');
 
-// request type
-curl_setopt($ch, CURLOPT_HTTPGET, true);
-
-curl_setopt($ch, CURLOPT_URL, "https://api.github.com/users/$user/repos?type=owner");
+curl_setopt($ch, CURLOPT_URL, "https://api.github.com/users/$user/repos");
 $result = curl_exec($ch);
 curl_close($ch);
 
