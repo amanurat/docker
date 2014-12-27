@@ -22,14 +22,14 @@ print_r('Code was verified. Retrieving access token...<br>');
 $data = http_build_query(array(
     'client_id' => CLIENT_ID,
     'client_secret' => CLIENT_SECRET,
-    'code' => $paramList['state'],
+    'code' => $paramList['code'],
     'redirect_uri' => REDIRECT_URI
 ));
 
 $context = stream_context_create(array(
     'http' => array(
         'content' => $data,
-        'header' => "Content-type: application/x-www-form-urlencoded\r\nContent-Length:" . strlen($data) . "\r\n",
+        'header' => "Accept: application/json\r\nContent-type: application/x-www-form-urlencoded\r\nContent-Length:" . strlen($data) . "\r\n",
         'method' => 'POST',
         'User-Agent' => 'ucdream'
     )
