@@ -19,7 +19,7 @@ if (count($repos) < 1) {
 $repoName = $repos[0]['name'];
 print_r("Createing webhook for repo $repoName<br>");
 
-$result = GitHubService::createWebhook($userId, $name);
+$result = GitHubService::createWebhook($userId, $repoName);
 print_r($result);
 
 ?>
