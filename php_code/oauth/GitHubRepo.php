@@ -11,7 +11,7 @@ class GitHubService {
     const TEMP_STATE = '123456789';
     
     const URI_AUTHORIZE = 'https://github.com/login/oauth/authorize';
-    const URI_AUTH_REDIRECT = 'http://www.ucdream.com/oauth/github.php';
+    const URI_AUTH_REDIRECT = 'http://www.ucdream.com/oauth/authorize.php';
     const URI_AUTH_TOKEN = 'https://github.com/login/oauth/access_token';
     const URI_WEBHOOK = 'http://www.ucdreamcom/oauth/payload.php';
     
