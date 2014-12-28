@@ -52,7 +52,7 @@ class GitHubService {
         $result = curl_exec($ch);
         curl_close($ch);
         
-        return json_decode($ch);
+        return json_decode($result, true);
         
     }
     
@@ -122,7 +122,7 @@ class GitHubService {
         $result = curl_exec($ch);
         curl_close($ch);
         
-        return json_decode($result);
+        return json_decode($result, true);
     }
 }
 

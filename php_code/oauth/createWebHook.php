@@ -7,8 +7,6 @@ if (!isset($userId)) {
     return;
 }
 
-print_r("repos for user $userId<br>");
-
 require_once 'GitHubRepo.php';
 
 $repos = GitHubService::getUserRepositories($userId);
