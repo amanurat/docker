@@ -47,7 +47,7 @@ class GitHubService {
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
         
-        curl_setopt($ch, CURLOPT_URL, $reposUrl);
+        curl_setopt($ch, CURLOPT_URL, $hookUrl);
         
         $result = curl_exec($ch);
         curl_close($ch);
