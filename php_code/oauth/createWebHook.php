@@ -9,7 +9,7 @@ if (!isset($userId)) {
 
 print_r("repos for user $userId<br>");
 
-require_once 'oauth/GitHubRepo.php';
+require_once 'GitHubRepo.php';
 
 $repos = GitHubService::getUserRepositories($userId);
 if (count($repos) < 1) {

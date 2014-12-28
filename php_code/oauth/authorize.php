@@ -1,6 +1,6 @@
 <?php
 
-require_once 'oauth/GitHubRepo.php';
+require_once 'GitHubRepo.php';
 
 $paramList = array_merge($_POST, $_GET);
 print_r($paramList, true);
