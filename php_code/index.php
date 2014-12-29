@@ -1,7 +1,5 @@
 <?php
-
 require_once 'oauth/GitHubRepo.php';
-
 ?>
 
 <html>
