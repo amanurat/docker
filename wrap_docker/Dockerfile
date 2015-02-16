@@ -14,9 +14,6 @@ RUN echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/
   && apt-get update -qq \
   && apt-get install -qqy lxc-docker
 
-# install git later
-ONBUILD RUN apt-get install git 
-
 # Install the magic wrapper.
 ADD ./wrapdocker /usr/local/bin/wrapdocker
 RUN chmod +x /usr/local/bin/wrapdocker
