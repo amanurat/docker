@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd /
+cd /usr
 
 echo 'hello, nanfei'
