@@ -2,4 +2,4 @@
 
 cd /usr
 
-echo 'hello, nanfei'
+echo 'hello, world'
